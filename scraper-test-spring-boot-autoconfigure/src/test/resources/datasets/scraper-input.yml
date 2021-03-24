@@ -1,0 +1,23 @@
+comics:
+  - key: "batman-2016"
+    title: "batman-2016"
+    cover: "cover1.jpg"
+    publisher: "DC Comics"
+    dateOfRelease: "2016"
+    status: "ONGOING"
+    author: "Tom King"
+    summary: "summary"
+    issues:
+      - issueNumber: "1"
+        url: "url1"
+        date: "2016-01-01"
+        pages:
+          - "page1.txt"
+          - "page2.jpg"
+          - "page3.jpg"
+      - issueNumber: "2"
+        url: "url2"
+        date: "2018-01-01"
+        pages:
+          - "page1.jpg"
+          - "page2.jpg"

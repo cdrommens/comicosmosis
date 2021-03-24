@@ -1,0 +1,27 @@
+{
+  "id" : "13de2dee-5f69-4db3-a83d-60e2bd74b8c3",
+  "name" : "comic_batman-2016",
+  "request" : {
+    "url" : "/readcomics/batman-2016",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 200,
+    "bodyFileName": "comicFound.html",
+    "headers" : {
+      "Date" : "Thu, 02 Apr 2020 11:24:15 GMT",
+      "Content-Type" : "text/html; charset=UTF-8",
+      "Set-Cookie" : [ "__cfduid=d26cd55c46c9ac41f679b79d3206b86de1585826655; expires=Sat, 02-May-20 11:24:15 GMT; path=/; domain=.readcomicsonline.ru; HttpOnly; SameSite=Lax; Secure", "XSRF-TOKEN=eyJpdiI6ImZcL1lUMkxnR3R2MHZDQjMrNUJSMTB3PT0iLCJ2YWx1ZSI6InIwbkVHV01PRHoraVRqVzVWMk00a0RYM3FGVGFYNm5WOVB6d1Mxb2ZNMGN3Y0xcL2pEdWp3SktobVhUcjlhYW92MEtXYUtadzY3ZG1hbEtvRUtcL1k2MVE9PSIsIm1hYyI6IjY5MTA5MTg2OGE2ZGNlOTVhZWRkNDdhMTQ2NjI4YjgxYWE5ZmZkZDcwODRmNGRhYzVkZDA4MWU1OWUzYWVjZjIifQ%3D%3D; expires=Thu, 02-Apr-2020 13:24:15 GMT; Max-Age=7200; path=/", "laravel_session=eyJpdiI6IlNOTjFNZER2U0pDekMyVGJ4am0wV3c9PSIsInZhbHVlIjoicndJbWx6ek5rUUdlUjFSQWFLUWwzaHIyN0VoOVJuU1dSb0ZCc3FDZlRtaG5JNmFwVzZSNUVqUnNyNHJHMUt6U3VCYm9lUHA4SmdHUnVEdHd1XC81aTBnPT0iLCJtYWMiOiI3MTk5OWI5NTFkMmE5NWQ1N2ZhZTI2YzkwZDNiMTA2YTVlODBkNmM3MGUwNGFiZGUzYTk1MGM4ZmQ2NTU0ZDhiIn0%3D; expires=Thu, 02-Apr-2020 13:24:15 GMT; Max-Age=7200; path=/; HttpOnly" ],
+      "Vary" : "Accept-Encoding",
+      "Cache-Control" : "no-cache, private",
+      "X-Powered-By" : "EasyEngine 3.7.5",
+      "CF-Cache-Status" : "DYNAMIC",
+      "Expect-CT" : "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
+      "Server" : "cloudflare",
+      "CF-RAY" : "57da2eb22c376a1d-LHR"
+    }
+  },
+  "uuid" : "13de2dee-5f69-4db3-a83d-60e2bd74b8c3",
+  "persistent" : true,
+  "insertionIndex" : 4
+}

@@ -1,0 +1,8 @@
+comics:
+  - key: "comickey"
+    title: "comickey"
+    issues:
+      - issueNumber: "1"
+        pages:
+          - "02.jpg"
+          - "03.jpg"

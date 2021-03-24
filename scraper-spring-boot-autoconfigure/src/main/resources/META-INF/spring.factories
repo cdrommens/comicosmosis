@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+be.rommens.scraper.autoconfigure.ScraperAutoConfiguration

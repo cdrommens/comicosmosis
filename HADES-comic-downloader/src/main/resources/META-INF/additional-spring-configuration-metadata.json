@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "download.folder.base",
+      "type": "java.lang.String",
+      "description": "Description for download.folder.base."
+  }
+] }
