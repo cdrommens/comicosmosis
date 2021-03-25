@@ -28,7 +28,7 @@
     <module>scraper-spring-boot-autoconfigure</module>
     <module>scraper-spring-boot-starter</module>
     <module>scraper-test-spring-boot-autoconfigure</module>
-    <module>HADES-comic-downloader</module>
+    <module>cleanup</module>
   </modules>
 
   <dependencyManagement>

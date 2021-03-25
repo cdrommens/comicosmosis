@@ -1,25 +1,22 @@
 package be.rommens.scraper.autoconfigure;
 
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
+
 import be.rommens.scraper.dataset.Comic;
 import be.rommens.scraper.dataset.DataSetParser;
 import be.rommens.scraper.dataset.Issue;
-import lombok.extern.slf4j.Slf4j;
-import org.junit.jupiter.api.Test;
-import org.yaml.snakeyaml.error.YAMLException;
-
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import org.junit.jupiter.api.Test;
+import org.yaml.snakeyaml.error.YAMLException;
 
 /**
  * User : cederik
  * Date : 15/05/2020
  * Time : 13:50
  */
-@Slf4j
 class DataSetParserTest {
 
     @Test

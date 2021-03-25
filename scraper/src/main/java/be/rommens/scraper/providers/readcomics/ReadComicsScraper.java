@@ -1,6 +1,6 @@
 package be.rommens.scraper.providers.readcomics;
 
-import static be.rommens.scraper.utils.CollectionUtils.getOnlyElement;
+import static be.rommens.scraper.utils.MyCollectionUtils.getOnlyElement;
 
 import be.rommens.scraper.api.models.ScrapedComic;
 import be.rommens.scraper.api.models.ScrapedIssue;
@@ -8,20 +8,19 @@ import be.rommens.scraper.api.models.ScrapedIssueDetails;
 import be.rommens.scraper.core.AbstractScraper;
 import be.rommens.scraper.core.ScrapingConfig;
 import be.rommens.scraper.core.ScrapingConfigParams;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.time.LocalDate;
 import java.time.Month;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.jsoup.HttpStatusException;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.List;
-import java.util.stream.Collectors;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

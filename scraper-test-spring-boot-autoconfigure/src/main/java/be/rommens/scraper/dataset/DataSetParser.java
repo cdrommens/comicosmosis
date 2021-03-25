@@ -1,25 +1,26 @@
 package be.rommens.scraper.dataset;
 
-import lombok.RequiredArgsConstructor;
+import java.io.InputStream;
+import java.util.Collections;
+import java.util.List;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.util.Assert;
 import org.yaml.snakeyaml.TypeDescription;
 import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.constructor.Constructor;
 
-import java.io.InputStream;
-import java.util.Collections;
-import java.util.List;
-
 /**
  * User : cederik
  * Date : 15/05/2020
  * Time : 13:49
  */
-@RequiredArgsConstructor
 public class DataSetParser {
 
     private final String dataset;
+
+    public DataSetParser(String dataset) {
+        this.dataset = dataset;
+    }
 
     public List<Comic> parseDataSet() {
         if (StringUtils.isNotEmpty(dataset)) {

@@ -6,13 +6,12 @@ import be.rommens.scraper.api.service.ScraperFactory;
 import be.rommens.scraper.core.Scraper;
 import be.rommens.scraper.dataset.Comic;
 import be.rommens.scraper.dataset.DataSetParser;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
+import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
-
-import java.util.List;
 
 /**
  * User : cederik
@@ -20,11 +19,14 @@ import java.util.List;
  * Time : 14:46
  */
 @Configuration
-@RequiredArgsConstructor
-@Slf4j
 public class MockScraperAutoConfiguration {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(MockScraperAutoConfiguration.class);
     private final Environment environment;
+
+    public MockScraperAutoConfiguration(Environment environment) {
+        this.environment = environment;
+    }
 
     private Scraper createMockScraper(List<Comic> givenResults) {
         return new ScraperMock(null, givenResults);
@@ -33,7 +35,7 @@ public class MockScraperAutoConfiguration {
     @Bean
     public ScraperFactory createScraperFactoryMock() {
         String dataset = this.environment.getProperty("hera.test.scrapermock.value");
-        log.info("using dataset for mocking the scraper = {}", dataset);
+        LOGGER.info("using dataset for mocking the scraper = {}", dataset);
         List<Comic> parsedComics = processDataSet(dataset);
         return new ScraperFactoryMock(createMockScraper(parsedComics));
     }
