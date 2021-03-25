@@ -19,7 +19,7 @@ public class CommandFileWriterTest {
     Path tempDir;
 
     @Test
-    public void testOutputFile() throws IOException {
+    void testOutputFile() throws IOException {
         List<String> foldersToClean = List.of("folder1", "folder2", "folder3");
 
         //when

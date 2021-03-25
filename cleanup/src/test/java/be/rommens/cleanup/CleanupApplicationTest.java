@@ -19,28 +19,28 @@ public class CleanupApplicationTest {
     Path tempDir;
 
     @Test
-    public void testNoSourceProvided() {
+    void testNoSourceProvided() {
         ApplicationArguments args = new DefaultApplicationArguments();
         CleanupApplication application = new CleanupApplication(null, null);
         assertThrows(IllegalArgumentException.class, () -> application.run(args), "Please specify option -source=/path/to/source");
     }
 
     @Test
-    public void testEmptySourceProvided() {
+    void testEmptySourceProvided() {
         ApplicationArguments args = new DefaultApplicationArguments("--source=");
         CleanupApplication application = new CleanupApplication(null, null);
         assertThrows(IllegalArgumentException.class, () -> application.run(args), "Source is empty");
     }
 
     @Test
-    public void testFolderDoesNotExist() {
+    void testFolderDoesNotExist() {
         ApplicationArguments args = new DefaultApplicationArguments("--source=notexist");
         CleanupApplication application = new CleanupApplication(null, null);
         assertThrows(IllegalArgumentException.class, () -> application.run(args), "Source does not exist or is not a directory");
     }
 
     @Test
-    public void testFolderIsAFile() {
+    void testFolderIsAFile() {
         File file = Paths.get(tempDir.toAbsolutePath().toString(), "file").toFile();
         ApplicationArguments args = new DefaultApplicationArguments("--source=" + file.toString());
         CleanupApplication application = new CleanupApplication(null, null);

@@ -4,6 +4,7 @@ package be.rommens.scraper.core;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Random;
 
 public class RandomUserAgent {
 
@@ -1659,8 +1660,8 @@ public class RandomUserAgent {
     }
 
     public static String getRandomUserAgent() {
-
-        double rand = Math.random() * 100;
+        Random random = new Random();
+        double rand = random.nextDouble() * 100;
         String browser = CHROME;
         double count = 0.0;
         for(Entry<String, Double> freq : freqMap.entrySet()) {
@@ -1671,6 +1672,6 @@ public class RandomUserAgent {
             }
         }
         String[] userAgents = uaMap.get(browser);
-        return userAgents[(int) Math.floor(Math.random() * userAgents.length)];
+        return userAgents[(int) Math.floor(random.nextDouble() * userAgents.length)];
     }
 }

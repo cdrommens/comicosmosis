@@ -5,7 +5,7 @@
   <parent>
     <groupId>be.rommens</groupId>
     <artifactId>comicosmosis</artifactId>
-    <version>0.0.1-SNAPSHOT</version> <!-- //TODO : can this be automatic? -->
+    <version>0.0.1-SNAPSHOT</version>
   </parent>
   <artifactId>scraper-spring-boot-autoconfigure</artifactId>
   <description>Spring boot autoconfigure for useing the Hera scraper library</description>

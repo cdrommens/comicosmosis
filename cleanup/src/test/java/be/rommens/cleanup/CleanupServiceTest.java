@@ -27,7 +27,7 @@ public class CleanupServiceTest {
     private CleanupService cleanupService;
 
     @Test
-    public void testCleanup() throws IOException {
+    void testCleanup() throws IOException {
         FileUtils.forceMkdir(Paths.get(tempDir.toAbsolutePath().toString(), "comic-old").toFile());
         FileUtils.forceMkdir(Paths.get(tempDir.toAbsolutePath().toString(), "comic-new").toFile());
 

@@ -93,7 +93,9 @@ public class ReadComicsScraper extends AbstractScraper {
                 scrapedComic.addIssue(new ScrapedIssueDetails(key, chapterUrl, parseDateString(date)));
             }
 
-            LOGGER.trace(scrapedComic.toString());
+            if (LOGGER.isTraceEnabled()) {
+                LOGGER.trace(scrapedComic.toString());
+            }
 
             return scrapedComic;
         }

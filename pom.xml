@@ -18,7 +18,7 @@
 	<properties>
 		<java.version>11</java.version>
       <spring-cloud.version>2020.0.2</spring-cloud.version>
-        <jsoup.version>1.12.1</jsoup.version> <!-- //TODO : latest is 1.13.1 -->
+        <jsoup.version>1.12.1</jsoup.version>
       <apache.commons.lang>3.11</apache.commons.lang>
       <commons.io.version>2.8.0</commons.io.version>
   </properties>
