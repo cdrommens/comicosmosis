@@ -13,7 +13,7 @@ import org.junit.jupiter.api.io.TempDir;
 /**
  *
  */
-public class CommandFileWriterTest {
+class CommandFileWriterTest {
 
     @TempDir
     Path tempDir;

@@ -13,7 +13,7 @@ import org.springframework.boot.DefaultApplicationArguments;
 /**
  *
  */
-public class CleanupApplicationTest {
+class CleanupApplicationTest {
 
     @TempDir
     Path tempDir;

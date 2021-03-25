@@ -18,7 +18,7 @@ import org.springframework.boot.test.context.SpringBootTest;
  */
 @SpringBootTest(classes = CleanupService.class)
 @AutoConfigureScraperMock(value = "/datasets/cleanup-scraper-input.yml")
-public class CleanupServiceTest {
+class CleanupServiceTest {
 
     @TempDir
     Path tempDir;
@@ -34,8 +34,9 @@ public class CleanupServiceTest {
         //when
         List<String> result = cleanupService.clean(tempDir);
         //then
-        assertThat(result).isNotEmpty();
-        assertThat(result).containsExactly("comic-old");
+        assertThat(result)
+                .isNotEmpty()
+                .containsExactly("comic-old");
     }
 
 }
