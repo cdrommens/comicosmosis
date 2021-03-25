@@ -6,7 +6,6 @@ import be.rommens.scraper.api.service.ScraperFactoryImpl;
 import be.rommens.scraper.core.Scraper;
 import be.rommens.scraper.core.ScrapingConfig;
 import be.rommens.scraper.core.ScrapingConfigParams;
-import be.rommens.scraper.providers.example.ExampleScraper;
 import be.rommens.scraper.providers.readcomics.ReadComicsScraper;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
@@ -41,14 +40,6 @@ public class ScraperAutoConfiguration {
         ScrapingConfig config = new ScrapingConfig();
         config.put(ScrapingConfigParams.BASE_URL, providerProperties.getUrl().get(Provider.READCOMICS.getPropertyName()));
         return new ReadComicsScraper(config);
-    }
-
-    @Bean
-    @ConditionalOnMissingBean(ExampleScraper.class)
-    public Scraper exampleScraper() {
-        ScrapingConfig config = new ScrapingConfig();
-        config.put(ScrapingConfigParams.BASE_URL, providerProperties.getUrl().get(Provider.EXAMPLE.getPropertyName()));
-        return new ExampleScraper(config);
     }
 
     @Bean

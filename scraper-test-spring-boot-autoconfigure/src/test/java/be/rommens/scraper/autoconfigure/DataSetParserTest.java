@@ -34,7 +34,7 @@ class DataSetParserTest {
         DataSetParser parser = new DataSetParser(null);
 
         //when / then
-        assertThat(parser.parseDataSet()).hasSize(0);
+        assertThat(parser.parseDataSet()).isEmpty();
     }
 
     @Test
@@ -43,7 +43,7 @@ class DataSetParserTest {
         DataSetParser parser = new DataSetParser("/datasets/scraper-empty.yml");
 
         //when / then
-        assertThat(parser.parseDataSet()).hasSize(0);
+        assertThat(parser.parseDataSet()).isEmpty();
     }
 
     @Test

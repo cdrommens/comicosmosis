@@ -1,9 +1,12 @@
 package be.rommens.scraper.core;
 
 
+import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Random;
 
 public class RandomUserAgent {
 
@@ -13,11 +16,16 @@ public class RandomUserAgent {
     public static final String FIREFOX = "Firefox";
     public static final String INTERNET_EXPLORER = "Internet Explorer";
 
-    private static Map<String, String[]> uaMap = new HashMap<>();
-    private static Map<String, Double> freqMap = new HashMap<>();
+    private static final Map<String, String[]> uaMap = new HashMap<>();
+    private static final Map<String, Double> freqMap = new HashMap<>();
+    private static final Random random;
 
     static {
-
+        try {
+            random = SecureRandom.getInstanceStrong();
+        } catch (NoSuchAlgorithmException e) {
+            throw new IllegalStateException(e);
+        }
         freqMap.put(INTERNET_EXPLORER, 11.8);
         freqMap.put(FIREFOX, 28.2);
         freqMap.put(CHROME, 52.9);
@@ -1659,8 +1667,7 @@ public class RandomUserAgent {
     }
 
     public static String getRandomUserAgent() {
-
-        double rand = Math.random() * 100;
+        double rand = random.nextDouble() * 100;
         String browser = CHROME;
         double count = 0.0;
         for(Entry<String, Double> freq : freqMap.entrySet()) {
@@ -1671,6 +1678,6 @@ public class RandomUserAgent {
             }
         }
         String[] userAgents = uaMap.get(browser);
-        return userAgents[(int) Math.floor(Math.random() * userAgents.length)];
+        return userAgents[random.nextInt(userAgents.length)];
     }
 }

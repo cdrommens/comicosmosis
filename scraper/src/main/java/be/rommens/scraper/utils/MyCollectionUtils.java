@@ -8,6 +8,10 @@ import java.util.NoSuchElementException;
  */
 public class MyCollectionUtils {
 
+    private MyCollectionUtils() {
+        //private constructor to hide implicit one
+    }
+
     public static <E> E getOnlyElement(Collection<E> collection) {
         return collection.stream()
                 .reduce((a, b) -> {

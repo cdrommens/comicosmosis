@@ -2,8 +2,6 @@ package be.rommens.scraper.api.service;
 
 import be.rommens.scraper.api.Provider;
 import be.rommens.scraper.core.Scraper;
-import be.rommens.scraper.providers.example.ExampleScraper;
-import be.rommens.scraper.providers.readcomics.ReadComicsScraper;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Service;
 
@@ -26,13 +24,6 @@ public class ScraperFactoryImpl implements ScraperFactory {
         if (provider == null) {
             throw new IllegalStateException("Provider must not be null");
         }
-        switch (provider) {
-            case READCOMICS:
-                return applicationContext.getBean(ReadComicsScraper.class);
-            case EXAMPLE:
-                return applicationContext.getBean(ExampleScraper.class);
-            default:
-                throw new IllegalStateException("No Scraper found for provider " + provider.name());
-        }
+        return applicationContext.getBean(provider.getScraper());
     }
 }
