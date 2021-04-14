@@ -9,7 +9,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -33,26 +32,12 @@ public class CleanupService {
     }
 
     public List<String> clean(Path sourceFolder) {
-
-        List<String> comicsToCheck = readDirectory(sourceFolder);
-
-        List<String> result = new ArrayList<>();
-        for (String comic : comicsToCheck) {
-            ScrapedComic scrapedComic = scraper.scrapeComic(comic);
-            LocalDate mostRecentDate = scrapedComic.getIssues().stream()
-                    .map(ScrapedIssueDetails::getDate)
-                    .max(Comparator.naturalOrder())
-                    .orElseThrow(() -> new IllegalStateException("No issue found"));
-            LOGGER.info("Comic {} has most recent issue published on {}", comic, mostRecentDate);
-            if (isOlderThan3Months(mostRecentDate)) {
-                result.add(comic);
-                LOGGER.info("Comic {} added", comic);
-            }
-        }
-        return result;
+        return readDirectory(sourceFolder).stream()
+                .filter(this::filterComicsLastIssueOlderThan3Months)
+                .collect(Collectors.toList());
     }
 
-    private List<String> readDirectory(Path folder) {
+    private static List<String> readDirectory(Path folder) {
         LOGGER.info("Reading directory {}", folder);
         try(Stream<Path> stream = Files.walk(folder)) {
             return stream
@@ -66,7 +51,17 @@ public class CleanupService {
         }
     }
 
-    private boolean isOlderThan3Months(LocalDate date) {
+    private boolean filterComicsLastIssueOlderThan3Months(String comic) {
+        ScrapedComic scrapedComic = scraper.scrapeComic(comic);
+        LocalDate mostRecentDate = scrapedComic.getIssues().stream()
+                .map(ScrapedIssueDetails::getDate)
+                .max(Comparator.naturalOrder())
+                .orElseThrow(() -> new IllegalStateException("No issue found"));
+        LOGGER.info("Comic {} has most recent issue published on {}", comic, mostRecentDate);
+        return isOlderThan3Months(mostRecentDate);
+    }
+
+    private static boolean isOlderThan3Months(LocalDate date) {
         return date.isBefore(LocalDate.now().minusMonths(3));
     }
 }
