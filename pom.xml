@@ -29,6 +29,7 @@
     <module>scraper-spring-boot-starter</module>
     <module>scraper-test-spring-boot-autoconfigure</module>
     <module>cleanup</module>
+    <module>downloader</module>
   </modules>
 
   <dependencyManagement>
