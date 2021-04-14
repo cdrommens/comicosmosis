@@ -1,14 +1,13 @@
 package be.rommens.scraper.core;
 
 import be.rommens.scraper.api.exceptions.ComicNotFoundException;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
 
 /**
  * User : cederik
@@ -20,7 +19,7 @@ public abstract class AbstractScraper implements Scraper {
 
     protected final ScrapingConfig scrapingConfig;
 
-    public AbstractScraper(ScrapingConfig scrapingConfig) {
+    protected AbstractScraper(ScrapingConfig scrapingConfig) {
         this.scrapingConfig = scrapingConfig;
     }
 
